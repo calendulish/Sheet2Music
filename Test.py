@@ -23,12 +23,14 @@ import RPiMusic
 pMusic = RPiMusic.Melody()
 
 try:
+    music = str(sys.argv[2]+'.melody').replace('/', '')
+
     if sys.argv[1] == 'buzzer':
-        pMusic.buzzerPlay(sys.argv[2])
+        pMusic.buzzerPlay(music)
     elif sys.argv[1] == 'speaker':
-        pMusic.spkPlay(sys.argv[2])
+        pMusic.spkPlay(music)
     elif sys.argv[1] == 'led':
-        pMusic.ledPlay(sys.argv[2])
+        pMusic.ledPlay(music)
 
     pMusic.end()
 except ImportError as e:
