@@ -23,7 +23,7 @@ import RPiMusic
 pMusic = RPiMusic.Melody()
 
 try:
-    music = str(sys.argv[2]+'.melody').replace('/', '')
+    music = str(f'{sys.argv[2]}.melody').replace('/', '')
 
     if sys.argv[1] == 'buzzer':
         pMusic.buzzerPlay(music)
@@ -34,4 +34,4 @@ try:
 
     pMusic.end()
 except ImportError as e:
-    print('Melody {} not found'.format(str(e)[17:-1]))
+    print(f'Melody {str(e)[17:-1]} not found')
